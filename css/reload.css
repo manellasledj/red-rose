@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    background: #000;
+    margin: 0;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+  }
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  span {
+    font-size: 80px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    z-index: 1;
+    mix-blend-mode: difference;
+  }
+  div::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: white;
+      animation: move 4s infinite linear;
+      z-index: -1;
+  }
+  @keyframes move {
+      0%,  100%{
+          left: 0;
+      }
+      50% {
+          left: calc(100% - 100px);
+      }
+  }
